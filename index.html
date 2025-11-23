@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub - Plataforma de Educación Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                    <svg role="img" aria-label="learn Hub" width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e0e7ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ddd6fe;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="5" y="10" width="40" height="40" rx="8" fill="url(#logoGradient)" stroke="#c7d2fe" stroke-width="2"/>
+                        <path d="M 15 20 L 15 40 M 25 18 L 25 42 M 35 20 L 35 40" stroke="#a5b4fc" stroke-width="2" stroke-linecap="round"/>
+                        <text x="52" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#d1d5db">
+                            Learn
+                        </text>
+                        <text x="118" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#c7d2fe">
+                            Hub
+                        </text>
+                        <circle cx="188" cy="25" r="4" fill="#e0e7ff"/>
+                        </svg>
+            </div>
+            <div class="nav-links">
+                <a href="#cursos">Cursos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <button class="btn-primary">Iniciar Sesión</button>
+        </div>
+    </nav>
+
+<!-- Hero Slider -->
+<section class="hero-slider">
+    <div class="slide active" data-slide="0">
+        <img src="img/ia.jpg" alt="es una imagen sobre la Inteligencia Artificial">
+        <div class="slide-overlay gradient-purple"></div>
+        <div class="slide-content">
+            <h1>Inteligencia Artificial</h1>
+            <p>El futuro está aquí</p>
+            <button class="btn-white">Explorar Cursos</button>
+        </div>
+    </div>
+    
+    <div class="slide" data-slide="1">
+        <img src="img/diseno.jpg" alt="">
+        <div class="slide-overlay gradient-pink"></div>
+        <div class="slide-content">
+            <h1>Diseño Digital</h1>
+            <p>Crea experiencias únicas</p>
+            <button class="btn-white">Explorar Cursos</button>
+        </div>
+    </div>
+    
+    <div class="slide" data-slide="2">
+        <img src="img/branding.jpg" alt="Branding">
+        <div class="slide-overlay gradient-cyan"></div>
+        <div class="slide-content">
+            <h1>Branding</h1>
+            <p>Construye tu marca</p>
+            <button class="btn-white">Explorar Cursos</button>
+        </div>
+    </div>
+    
+    <div class="slide-indicators">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+    </div>
+</section>
+
+    <!-- Courses Section -->
+    <section id="cursos" class="courses-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Últimos Cursos</h2>
+                <p>Descubre las formaciones más actuales y demandadas del mercado</p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <h4>Machine Learning Avanzado</h4>
+                    <p>Domina los algoritmos más potentes de IA y aprende a crear modelos predictivos que transformarán tu carrera profesional.</p>
+                    <button class="btn-gradient">Ver Más</button>
+                </div>
+                
+                <div class="course-card">
+                    <h4>UX/UI Design Profesional</h4>
+                    <p>Diseña interfaces intuitivas y experiencias memorables. Aprende las herramientas y metodologías.</p>
+                    <button aria-label="ver más sobre UX/UI Design Profesional" class="btn-gradient">Ver Más</button>
+                </div>
+                
+                <div class="course-card">
+                    <h4>Branding & Identidad Visual</h4>
+                    <p>Construye marcas poderosas desde cero. Estrategia, diseño y comunicación visual para destacar en el mercado digital.</p>
+                    <button class="btn-gradient_dos">Ver Más
+                        <span class="sr-only">Sobre Branding & Identidad Visual</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Banner -->
+    <section class="ai-banner">
+        <div class="container">
+            <h2>El Futuro del Aprendizaje está Impulsado por IA</h2>
+            <p>La inteligencia artificial está revolucionando la educación. Nuestros cursos te preparan para liderar esta transformación digital, combinando teoría avanzada con práctica real. Aprende de expertos y forma parte de la próxima generación de profesionales tech.</p>
+            <div class="banner-tags">
+                <span class="tag">🚀 Aprendizaje Adaptativo</span>
+                <span class="tag">💡 Contenido Personalizado</span>
+                <span class="tag">🎯 Resultados Garantizados</span>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Form con errores de accesibilidad -->
+<section id="contacto" class="contact-section">
+    <div class="container-small">
+        <div class="section-header">
+            <h2>Solicita Información</h2>
+            <p>Completa el formulario y te contactaremos para resolver todas tus dudas</p>
+        </div>
+        
+        <div class="contact-form-wrapper">
+            <div class="form-group">
+                <label>Nombre Completo *</label>
+                <input type="text" id="nombre" placeholder="Tu nombre">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" placeholder="tu@email.com">
+                <span class="error-message" id="email-error">Error email</span>
+            </div>
+            
+            <!-- Campo teléfono SIN etiqueta visible -->
+            <div class="form-group">
+                <input type="tel" id="telefono" placeholder="Teléfono *">
+            </div>
+            
+            <div class="form-group">
+                <label>Curso de Interés *</label>
+                <select id="curso">
+                    <option value="">Selecciona un curso</option>
+                    <option value="machine-learning">Machine Learning Avanzado</option>
+                    <option value="uxui">UX/UI Design Profesional</option>
+                    <option value="branding">Branding & Identidad Visual</option>
+                    <option value="data-science">Data Science & Analytics</option>
+                </select>
+            </div>
+            
+            <!-- Checkbox de privacidad con texto a la izquierda (orden invertido) -->
+            <div class="privacy-group">
+                <label>Acepto la política de privacidad</label>
+                <input type="checkbox" id="privacy">
+            </div>
+            
+            <button class="btn-submit" onclick="handleSubmitWithErrors()">Enviar Solicitud</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg role="img" aria-label="learn Hub" width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e0e7ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ddd6fe;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="5" y="10" width="40" height="40" rx="8" fill="url(#logoGradient)" stroke="#c7d2fe" stroke-width="2"/>
+                        <path d="M 15 20 L 15 40 M 25 18 L 25 42 M 35 20 L 35 40" stroke="#a5b4fc" stroke-width="2" stroke-linecap="round"/>
+                        <text x="52" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#d1d5db">
+                            Learn
+                        </text>
+                        <text x="118" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#c7d2fe">
+                            Hub
+                        </text>
+                        <circle cx="188" cy="25" r="4" fill="#e0e7ff"/>
+                        </svg>
+                    </div>
+                    <p>Transformando el futuro de la educación digital</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="#">Inteligencia Artificial</a></li>
+                        <li><a href="#">Diseño UX/UI</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Branding</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Testimonios</a></li>
+                        <li><a href="#">Carreras</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon social-facebook"></a>
+                        <a href="#" class="social-icon social-twitter"></a>
+                        <a href="#" class="social-icon social-linkedin"></a>
+                        <a href="#" class="social-icon social-instagram"></a>
+                    </div>
+                    <br>
+                    <h3>Unete a nuestra comunidad</h3>
+                        <input class="suscribete" type="text" placeholder="email">
+                        <button class="btn-submit disabled" type="submit" disabled>Suscríbete</button>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LearnHub. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,744 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8fafc;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background: rgb(161, 0, 255);
+    border-radius: 8px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: rgb(161, 0, 255);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #737e8d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #9333ea;
+}
+
+.btn-primary {
+    background: rgb(161, 0, 255);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+        outline: none;
+}
+
+.btn-primary:hover {
+ background-color: white;
+ color: #9333ea;
+ border: 2px solid #ddc9f0;
+}
+
+/* Hero Slider - FIX para que el texto se vea sobre las imágenes */
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.gradient-purple {
+    background: none
+}
+
+.gradient-pink {
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(183, 85, 5, 0.8));
+}
+
+.gradient-cyan {
+    background: none
+}
+
+.slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 3;
+}
+
+.slide-content h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.slide-content p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.btn-white {
+    background: white;
+    color: #9333ea;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-white:hover {
+    background: #f3f4f6;
+    transform: scale(1.05);
+}
+
+.slide-indicators {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.75rem;
+    z-index: 20;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.indicator.active {
+    width: 32px;
+    border-radius: 6px;
+    background: white;
+        outline: none;
+}
+
+/* Courses Section */
+.courses-section {
+    padding: 5rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: #6b7280;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.course-card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.course-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+}
+
+.course-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.course-card h3 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.course-card p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.btn-gradient {
+    width: 100%;
+    background: rgb(161, 0, 255);
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-gradient_dos{
+    width: 100%;
+    background: rgb(161, 0, 255);
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+     outline: none;
+}
+
+.btn-gradient:hover {
+    background-color: white;
+ color: #9333ea;
+ border: 2px solid #ddc9f0;
+}
+
+/* AI Banner */
+.ai-banner {
+    background: linear-gradient(135deg, #9333ea, #3b82f6, #06b6d4);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.ai-banner h2 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.ai-banner p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+.banner-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: rgb(255, 255, 255);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+/* Contact Form - Con errores de accesibilidad */
+.contact-section {
+    padding: 5rem 2rem;
+    background: #f9fafb;
+}
+
+.container-small {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form-wrapper {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #9333ea;
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+}
+
+/* Campos con error - borde rojo */
+.form-group input.error,
+.form-group select.error {
+    border-color: #ef4444;
+}
+
+/* Mensaje de error - BAJO CONTRASTE (error de accesibilidad) */
+.error-message {
+    color: #fca5a5;  /* Color muy claro, poco contraste */
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.show{
+    display: initial;
+}
+
+/* Grupo de privacidad - checkbox a la DERECHA del texto (error de accesibilidad) */
+.privacy-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-direction: row; /* Texto primero, checkbox después */
+}
+
+.privacy-group label {
+    color: #374151;
+    font-weight: 500;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.privacy-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.btn-submit {
+   width: 100%;
+    background: rgb(161, 0, 255);
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: white;
+ color: #9333ea;
+ border: 2px solid #ddc9f0;
+}
+
+/* Footer */
+.footer {
+    background: #1f2937;
+    color: white;
+    padding: 3rem 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-col h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: white;
+}
+
+.footer-col p {
+    color: #9ca3af;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: #374151;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background: #9333ea;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 2rem;
+    text-align: center;
+    color: #9ca3af;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .slide-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .ai-banner h2 {
+        font-size: 2rem;
+    }
+    
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-wrapper {
+        padding: 2rem;
+    }
+}
+
+/* AI Banner con imagen de fondo */
+.ai-banner {
+    position: relative;
+    background-image: url('img/chin.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax */
+    padding: 5rem 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Overlay de gradiente sobre la imagen */
+.ai-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.85), rgba(59, 130, 246, 0.85), rgba(6, 182, 212, 0.85));
+    z-index: 1;
+}
+
+/* Asegurar que el contenido esté sobre el overlay */
+.ai-banner > * {
+    position: relative;
+    z-index: 2;
+}
+
+.ai-banner h2 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.ai-banner p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+.banner-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+/* Ocultar AI Banner en dispositivos móviles y tablets */
+@media (max-width: 768px) {
+    .ai-banner {
+        display: none;
+    }
+}
+
+/* Ocultar AI Banner cuando el zoom es 200% o mayor 
+   (viewport efectivo de 600px o menos en pantalla de 1200px) */
+@media (max-width: 600px) {
+    .ai-banner {
+        display: none;
+    }
+}
+
+/* Alternativa: Ocultar en cualquier pantalla pequeña o zoom alto */
+@media (max-width: 768px), (max-height: 600px) {
+    .ai-banner {
+        display: none;
+    }
+}
+
+/* Opción avanzada: Detectar zoom mediante densidad de píxeles */
+@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
+    .ai-banner {
+        display: none;
+    }
+}
+
+/* CSS para los iconos de redes sociales con ::after */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: #374151;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.social-icon:hover {
+    background: #9333ea;
+    transform: translateY(-3px);
+}
+
+/* Iconos generados con ::after - SIN texto accesible */
+.social-facebook::after {
+    content: 'f';
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.social-twitter::after {
+    content: '𝕏';
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.social-linkedin::after {
+    content: 'in';
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.social-instagram::after {
+    content: 'IG';
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* Botón suscripción en footer */
+.suscribete {
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.suscribete:focus {
+    outline: none;
+    border-color: #9333ea;
+}
+
+/* Botón deshabilitado - estado normal (gris apagado) */
+.btn-submit.disabled {
+    background: #9ca3af;
+    color: #d1d5db;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: not-allowed;
+    transition: all 0.3s;
+    opacity: 0.6;
+}
