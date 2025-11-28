@@ -784,3 +784,7 @@ body {
     margin: 0 2rem 2rem 2rem;
     width: calc(100% - 4rem);
 }
+
+.enlace{
+    text-decoration: none;
+}
