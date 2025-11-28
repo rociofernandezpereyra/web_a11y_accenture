@@ -166,3 +166,24 @@ document.addEventListener('keypress', (e) => {
         }
     }
 });
+
+const btnLogin = document.getElementById('btn-login');
+const modal = document.getElementById('modal-login');
+const btnCerrar = modal.querySelector('.cerrar');
+
+btnLogin.addEventListener('click', () => {
+  modal.classList.add('activa');
+  modal.setAttribute('aria-hidden', 'false');
+});
+
+btnCerrar.addEventListener('click', () => {
+  modal.classList.remove('activa');
+  modal.setAttribute('aria-hidden', 'true');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('activa');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+});
