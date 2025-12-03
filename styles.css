@@ -181,7 +181,7 @@ body {
 }
 
 .btn-white:hover {
-    background-color: white;
+    background-color: transparent;
  color: #9333ea;
  border: 2px solid #ddc9f0;
 }
