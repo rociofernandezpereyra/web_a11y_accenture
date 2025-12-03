@@ -181,8 +181,9 @@ body {
 }
 
 .btn-white:hover {
-    background: #f3f4f6;
-    transform: scale(1.05);
+    background-color: white;
+ color: #9333ea;
+ border: 2px solid #ddc9f0;
 }
 
 .slide-indicators {
