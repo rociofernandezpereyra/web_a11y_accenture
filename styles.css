@@ -789,3 +789,8 @@ body {
 .enlace{
     text-decoration: none;
 }
+
+.subtitle_info{
+    font-size: 1.25rem;
+    color: #6b7280;
+}
