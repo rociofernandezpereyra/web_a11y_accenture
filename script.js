@@ -147,6 +147,7 @@ function handleSubmitWithErrors() {
     // Insertamos el texto y aseguramos que sea visible
     mensajeExito.textContent = '¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.';
     mensajeExito.style.display = 'block'; // Por si lo tienes oculto en CSS
+    mensajeExito.style.color = 'green'; // Por si lo tienes oculto en CSS
     mensajeExito.classList.add('mensaje-visible'); // Recomendado para darle estilo
 
     // Limpiar formulario
