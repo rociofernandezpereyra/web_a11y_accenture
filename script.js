@@ -141,15 +141,26 @@ function handleSubmitWithErrors() {
         return;
     }
     
-    // Éxito
-    alert('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.');
+// --- LÓGICA DE ÉXITO ---
+    const mensajeExito = document.getElementById('exito');
     
+    // Insertamos el texto y aseguramos que sea visible
+    mensajeExito.textContent = '¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.';
+    mensajeExito.style.display = 'block'; // Por si lo tienes oculto en CSS
+    mensajeExito.classList.add('mensaje-visible'); // Recomendado para darle estilo
+
     // Limpiar formulario
     nombre.value = '';
     email.value = '';
     telefono.value = '';
     curso.value = '';
     privacy.checked = false;
+
+    // Opcional: Ocultar el mensaje después de 5 segundos
+    setTimeout(() => {
+        mensajeExito.textContent = '';
+        mensajeExito.style.display = 'none';
+    }, 6000);
 }
 
 // Definir handleSubmit como alias de handleSubmitWithErrors
