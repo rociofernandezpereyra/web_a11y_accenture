@@ -789,14 +789,15 @@ body {
 .enlace{
     text-decoration: none;
 }
+.asteri::after {
+    content: " *";
+    color: rgb(9, 9, 9);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 
 .subtitle_info{
     font-size: 1.25rem !important;
     color: #6b7280 !important;
 }
 
-.asteri::after {
-    content: " *";
-    color: red;
-    font-weight: bold;
-}
