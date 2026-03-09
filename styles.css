@@ -794,3 +794,8 @@ body {
     font-size: 1.25rem !important;
     color: #6b7280 !important;
 }
+
+.asteri::after {
+    content: " *";
+    color: red;
+    font-weight: bold;}
